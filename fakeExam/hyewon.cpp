@@ -19,7 +19,11 @@ vector<int> solution(vector<int> answers) {
 		if (v3[i%v3.size()] == answers[i]) cnt[2]++;
 	}
 
-	int max = *max_element(cnt.begin(), cnt.end());
+	int max = 0;
+	for (int i = 0; i < cnt.size(); i++) {
+		if (max < cnt[i])
+			max = cnt[i];
+	}
 
 	for (int i = 0; i < cnt.size(); i++) {
 		if (cnt[i] == max)
