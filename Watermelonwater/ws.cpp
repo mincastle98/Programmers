@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+ 
 using namespace std;
 
 string solution(int n) {
@@ -9,9 +9,9 @@ string solution(int n) {
 
     for (int i = 0; i < n; i++) {
         if (i % 2 == 0)
-            answer += "¼ö";
+            answer += "Â¼Ã¶";
         else
-            answer += "¹Ú";
+            answer += "Â¹Ãš";
     }
 
     return answer;
