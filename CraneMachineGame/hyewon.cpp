@@ -25,12 +25,12 @@ int solution(vector<vector<int>> board, vector<int> moves) {
 	}
 
 	return answer;
-}
+} 
 
 int main() {
 	vector<vector<int>> b = { {0,0,0,0,0}, {0,0,1,0,3}, {0,2,5,0,1},
 								{4,2,4,4,2}, {3,5,1,3,1} };
 	vector<int> m = { 1, 5, 3, 5, 1, 2, 1, 4 };
 
-	cout << "»ç¶óÁø ÀÎÇüÀÇ °³¼ö´Â " << solution(b, m) << endl;
+	cout << "Â»Ã§Â¶Ã³ÃÃ¸ Ã€ÃŽÃ‡Ã¼Ã€Ã‡ Â°Â³Â¼Ã¶Â´Ã‚ " << solution(b, m) << endl;
 }
