@@ -26,7 +26,7 @@ int solution(vector<vector<int>> board, vector<int> moves) {
     }
 
     for (int i = 0; i < pick.size() - 1; i++) {
-        if (pick[i] == pick[i + 1]) {
+        if (pick.size()>=2&&pick[i] == pick[i + 1]) {
             answer += 2;
             pick.erase(pick.begin() + i);
             pick.erase(pick.begin() + i);
