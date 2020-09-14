@@ -7,7 +7,7 @@ int solution(vector<vector<int>> board, vector<int> moves) {
     int answer = 0;
 
     vector<int> pick;
-
+ 
     int i = 0;
     while (i < moves.size()) {
         int now = moves[i] - 1;
