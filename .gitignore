@@ -1,5 +1,8 @@
 ### macOS ###
 # General
+*
+!*/
+!*.*
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -38,11 +41,6 @@ Temporary Items
 .out
 .exec
 .exe
-
-*
-!*/
-!*.*
-.DS_Store
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
