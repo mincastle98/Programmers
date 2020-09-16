@@ -35,6 +35,7 @@ Temporary Items
 *.code-workspace
 .dSYM
 .plist
+.out
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
