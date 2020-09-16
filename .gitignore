@@ -37,6 +37,7 @@ Temporary Items
 .plist
 .out
 .exec
+.exe
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
