@@ -36,6 +36,7 @@ Temporary Items
 .dSYM
 .plist
 .out
+.exec
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
