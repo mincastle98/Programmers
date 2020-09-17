@@ -60,16 +60,10 @@ string solution(vector<int> numbers, string hand)
         else if (i != 0 && i % 3 == 0)
             answer += right.exec(p[i]);
         else
-            if (left.getDistance(p[i]) > right.getDistance(p[i]))
-                answer += right.exec(p[i]);
-            else if (left.getDistance(p[i]) == right.getDistance(p[i])) 
-                if (hand == "left")
-                    answer += left.exec(p[i]);
-                else 
-                    answer += right.exec(p[i]);
-
-            else 
-                answer += left.exec(p[i]);    
+            if (left.getDistance(p[i]) == right.getDistance(p[i]))
+                answer += hand == "left" ? left.exec(p[i]) : right.exec(p[i]);
+            else
+                answer += left.getDistance(p[i]) < right.getDistance(p[i]) ? left.exec(p[i]) : right.exec(p[i]); 
 
     return answer;
 }
