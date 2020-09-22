@@ -29,7 +29,6 @@ vector<int> solution(vector<int> numbers)
 
 int main()
 {
-    
     vector<int> n = {2, 1, 3, 4, 1};
     vector<int> res = solution(n);
     
