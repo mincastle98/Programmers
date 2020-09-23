@@ -27,7 +27,7 @@ vector<int> solution(int N, vector<int> stages) {
 		}
 	}
 
-	int sum = 0;
+	int sum = 0; 
 	for (int i = 0; i < N; i++) {
 		if (i > 0)
 			sum += num[i - 1];
