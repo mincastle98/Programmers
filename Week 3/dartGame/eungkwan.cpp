@@ -13,28 +13,28 @@ int solution(string dartResult) {
 	{
 		if ((dartResult[i] == 'D') && (dartResult[i + 1] == '#'))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 				s.push(-100);
 			else
-				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0') * -1); //±× ¿Ü
+				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0') * -1); //ê·¸ ì™¸
 		}
 		else if ((dartResult[i] == 'T') && (dartResult[i + 1] == '#'))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 				s.push(-1000);
 			else
-				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0') * (dartResult[i - 1] - '0') * -1); //±× ¿Ü
+				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0') * (dartResult[i - 1] - '0') * -1); //ê·¸ ì™¸
 		}
 		else if ((dartResult[i] == 'S') && (dartResult[i + 1] == '#'))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 				s.push(-10);
 			else
-				s.push((dartResult[i - 1] - '0') * -1); //±× ¿Ü
+				s.push((dartResult[i - 1] - '0') * -1); //ê·¸ ì™¸
 		}
 		else if ((dartResult[i] == 'D') && (dartResult[i + 1] == '*'))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 			{
 				tmp = s.top();
 				s.pop();
@@ -51,7 +51,7 @@ int solution(string dartResult) {
 		}
 		else if ((dartResult[i] == 'T') && (dartResult[i + 1] == '*'))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 			{
 				tmp = s.top();
 				s.pop();
@@ -68,7 +68,7 @@ int solution(string dartResult) {
 		}
 		else if ((dartResult[i] == 'S') && (dartResult[i + 1] == '*'))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 			{
 				tmp = s.top();
 				s.pop();
@@ -85,49 +85,49 @@ int solution(string dartResult) {
 		}
 		else if ((dartResult[i] == 'D') && (isdigit(dartResult[i + 1]) == 1))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 				s.push(100);
 			else
-				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0')); //±× ¿Ü
+				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0')); //ê·¸ ì™¸
 		}
 		else if ((dartResult[i] == 'T') && (isdigit(dartResult[i + 1]) == 1))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 				s.push(1000);
 			else
-				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0') * (dartResult[i - 1] - '0')); //±× ¿Ü
+				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0') * (dartResult[i - 1] - '0')); //ê·¸ ì™¸
 		}
 		else if ((dartResult[i] == 'S') && (isdigit(dartResult[i + 1]) == 1))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 				s.push(10);
 			else
-				s.push((dartResult[i - 1] - '0')); //±× ¿Ü
+				s.push((dartResult[i - 1] - '0')); //ê·¸ ì™¸
 		}
 		else if ((dartResult[i] == 'D') && (i == len - 1))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 				s.push(100);
 			else
-				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0')); //±× ¿Ü
+				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0')); //ê·¸ ì™¸
 		}
 		else if ((dartResult[i] == 'T') && (i == len - 1))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 				s.push(1000);
 			else
-				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0') * (dartResult[i - 1] - '0')); //±× ¿Ü
+				s.push((dartResult[i - 1] - '0') * (dartResult[i - 1] - '0') * (dartResult[i - 1] - '0')); //ê·¸ ì™¸
 		}
 		else if ((dartResult[i] == 'S') && (i == len - 1))
 		{
-			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ÀÏ ¶§
+			if ((dartResult[i - 1] == '0') && (dartResult[i - 2] == '1')) //10ì¼ ë•Œ
 				s.push(10);
 			else
-				s.push((dartResult[i - 1] - '0')); //±× ¿Ü
+				s.push((dartResult[i - 1] - '0')); //ê·¸ ì™¸
 		}
 	}
 	for (int k = 0; k < 3; k++)
-		arr[k] = NULL;//¹è¿­ ÃÊ±âÈ­
+		arr[k] = NULL;//ë°°ì—´ ì´ˆê¸°í™”
 	for (int k = 0; k < 3; k++)
 	{
 		arr[k] = s.top();
