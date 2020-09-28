@@ -38,12 +38,16 @@ vector<string> solution(int n, vector<int> arr1, vector<int> arr2) {
         }
         arr2_s.push_back(temp);
     }
-
-    for (int i = 0; i < arr1_s.size(); i++) {
-        cout << arr1_s[i] << endl;
-    }
-    for (int i = 0; i < arr2_s.size(); i++) {
-        cout << arr2_s[i] << endl;
+   
+    for (int i = 0; i < n; i++) {
+        temp.clear();
+        for (int j = 0; j < n; j++) {
+            if (arr1_s[i][j] == '#' || arr2_s[i][j] == '#')
+                temp += '#';
+            else if (arr1_s[i][j] != '#' && arr2_s[i][j] != '#')
+                temp += ' ';
+        }
+        answer.push_back(temp);
     }
     
     return answer;
