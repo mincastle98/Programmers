@@ -13,7 +13,7 @@ bool cmp(pair<int, double> a, pair<int, double> b)
 
 vector<int> solution(int N, vector<int> stages) {
 	vector<int> answer;
-	vector<pair<int, double>> failure; //½ÇÆĞÀ² ÀúÀå ¹è¿­
+	vector<pair<int, double>> failure; //Â½Ã‡Ã†ÃÃ€Â² Ã€ÃºÃ€Ã¥ Â¹Ã¨Â¿Â­
 	double player = stages.size();
 	for (int i = 0; i < N; i++)
 	{
