@@ -8,8 +8,7 @@ int gcd(int a, int b) {
 
 long long solution(int w, int h) {
     long long answer = 1;
-    
-    //큰수,작은수 나누기
+   
     int max, min;
     if (w >= h) { max = w; min = h; }
     else { max = h; min = w; }
