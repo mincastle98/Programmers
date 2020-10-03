@@ -1,4 +1,4 @@
-# JJANGORITHM :computer: :book:
+# JJANGORITHM :computer: :book: :zap:
 - 김우성:older_man: 최윤호:boy: 김민성:boy: 김응관:boy: 이강희:boy: 강동연:baby: 장수아:baby: 강혜원:baby:
 - 화이팅😄😄😄
 
