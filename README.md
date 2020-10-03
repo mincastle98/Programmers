@@ -1,5 +1,6 @@
-# JJANGORITHM Lv.1
-### Programmers 코딩테스트 연습
+# JJANGORITHM 
+## Programmers 코딩테스트 연습
+
 ### Week1 ~ Week3 -> Lv.1
 ### Week4 ~ -> Lv.2
 ### https://programmers.co.kr/learn/challenges
