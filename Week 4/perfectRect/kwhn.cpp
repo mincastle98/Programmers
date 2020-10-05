@@ -5,11 +5,11 @@ long long gcd(long long a, long long b)
 	else return gcd(b, a%b);
 }
 
-long long solution(int w, int h) { //╦ч╦П╦╝ ╟Ь╟ё overflow ╤╖╧╝©║ long е╦ют ╩Г©К
+long long solution(int w, int h) { //К╘■К╙╗К╕╛ ЙЁ╣Й╟└ overflow К∙▄К╛╦Л≈░ long М┐─Л·┘ Л┌╛Л ╘
 	long long answer = 1;
 	long long a = w;
 	long long b = h;
-	if ((a == 1) || (b == 1)) //w, h ╣я аъ гоЁ╙╤С╣╣ 1юл╦И, 0юс
+	if ((a == 1) || (b == 1)) //w, h К▒≤ Л╓▒ М∙≤К┌≤К²╪К▐└ 1Л²╢К╘╢, 0Л·└
 		answer = 0;
 	else
 	{
