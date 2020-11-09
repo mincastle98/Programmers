@@ -8,9 +8,9 @@ using namespace std;
 int solution(string skill, vector<string> skill_trees)
 {
 	int answer = 0;
-	int end = skill.length(); //½ºÅ³ÀÇ ±æÀÌ
-	int tmp_len; //½ºÅ³Æ®¸® ¹®ÀÚ¿­ÀÇ ±æÀÌ
-	stack<char> tmp; //½ºÅ³ÀÇ ±æÀÌ µÚ¿¡¼­ ºÎÅÍ ÀúÀåÇÒ stack
+	int end = skill.length(); //ìŠ¤í‚¬ì˜ ê¸¸ì´
+	int tmp_len; //ìŠ¤í‚¬íŠ¸ë¦¬ ë¬¸ìì—´ì˜ ê¸¸ì´
+	stack<char> tmp; //ìŠ¤í‚¬ì˜ ê¸¸ì´ ë’¤ì—ì„œ ë¶€í„° ì €ì¥í•  stack
 	stack<char> ptr;
 	int count = 0;
 
