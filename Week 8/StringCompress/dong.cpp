@@ -1,26 +1,39 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <queue>
+#include <algorithm>
+#include <cmath>
 using namespace std;
 
-int solution(vector<int> scoville, int K) {
+int solution(string s) {
     int answer = 0;
-    int new_scv, pop_1, pop_2;
-    priority_queue< int, vector<int>, greater<int> > scv;
-    for (int i = 0; i < scoville.size(); i++) {
-        scv.push(scoville[i]);
+    vector <int> results;
+    string cmp, result;
+    int count;
+
+    for (int i = 1; i <= ceil((double)s.size() / 2); i++) { 
+        cmp = s.substr(0, i);
+        result = "";
+        count = 1;
+        for (int j = 1; j <= ceil((double)s.size() / i); j++) {
+            if (s.size() < j * i) {
+                result += cmp;
+            }
+            else {
+                if (cmp == s.substr(j * i, i)) count++;
+                else {
+                    if (count != 1) result += to_string(count);
+                    result += cmp;
+                    cmp = s.substr(j * i, i);
+                    count = 1;
+                }
+            }
+        }
+        results.push_back(result.size());
     }
-    while (1) {
-        if (scv.top() > K || scv.size() == 1) break;
-        pop_1 = scv.top();
-        scv.pop();
-        pop_2 = scv.top();
-        scv.pop();
-        new_scv = pop_1 + pop_2 * 2;
-        scv.push(new_scv);
-        answer++;
-    }
-    if (scv.top() < K) answer = -1;
+    answer = *min_element(results.begin(), results.end());
     return answer;
+}
+int main() {
+    cout << solution("aabbaccc");
 }
