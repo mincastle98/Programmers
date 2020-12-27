@@ -8,8 +8,8 @@ using namespace std;
 
 int solution(string s) {
 	int answer = 0;
-	int loop = 1; //ÂÉ°³´Â µîºĞÀÇ ¼ö
-	vector<int> result; //loop¸¶´Ù ÂÉ°³¼­ ³ª¿À´Â ¾ĞÃà ±æÀÌ ÀúÀå
+	int loop = 1; //ìª¼ê°œëŠ” ë“±ë¶„ì˜ ìˆ˜
+	vector<int> result; //loopë§ˆë‹¤ ìª¼ê°œì„œ ë‚˜ì˜¤ëŠ” ì••ì¶• ê¸¸ì´ ì €ì¥
 
 	if (s.length() == 1)
 		return 1;
@@ -18,8 +18,8 @@ int solution(string s) {
 		while (loop <= s.length() / 2)
 		{
 			int measure = 0;
-			int count = 0; //¹®ÀÚ¿­ ÃßÃâ ½ÃÀÛ À§Ä¡
-			string tmp = ""; //ÃßÃâÇÑ ¹®ÀÚ¿­ ÀÓ½Ã ÀúÀå -> test queue¿¡ ÅõÀÔ
+			int count = 0; //ë¬¸ìì—´ ì¶”ì¶œ ì‹œì‘ ìœ„ì¹˜
+			string tmp = ""; //ì¶”ì¶œí•œ ë¬¸ìì—´ ì„ì‹œ ì €ì¥ -> test queueì— íˆ¬ì…
 			int num = 1;
 			string tpa = s.substr(0, loop);
 			count += loop;
@@ -37,10 +37,10 @@ int solution(string s) {
 					num = 1;
 					tpa = s.substr(count, loop);
 				}
-				count += loop; //½ÃÀÛ À§Ä¡ °»½Å
-			} //ÂÉ°³¼­ ÀúÀåÇÏ±â
+				count += loop; //ì‹œì‘ ìœ„ì¹˜ ê°±ì‹ 
+			} //ìª¼ê°œì„œ ì €ì¥í•˜ê¸°
 
-			int nam = (s.length() % loop); //³ª¸ÓÁö ±æÀÌ ÃßÃâ
+			int nam = (s.length() % loop); //ë‚˜ë¨¸ì§€ ê¸¸ì´ ì¶”ì¶œ
 			result.push_back(tmp.length() + nam);
 			loop++;
 		}
