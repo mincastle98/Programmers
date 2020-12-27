@@ -1,10 +1,5 @@
 ### macOS ###
 # General
-*
-!*/
-!*.cpp
-!*.md
-!*.gitignore
 
 # Icon must end with two \r
 Icon
