@@ -23,7 +23,6 @@ int check(int x, int y, int color, int cnt) {
         cnt = check(x - 1, y, color, cnt);
 
     if (picture_global[x][y] == color){
-        cout<< x << " " << y << endl;
         return cnt + 1;
     }
 }
@@ -33,9 +32,10 @@ vector<int> solution(int m, int n, vector<vector<int>> picture) {
     int max_size_of_one_area = 0;
 
     picture_global = picture;
+    checked.resize(m);
     for (int i = 0; i < m; i++) {
         vector<int> tmp(n, 1);
-        checked.push_back(tmp);
+        checked[i] = tmp;
     }
     max_x = m;
     max_y = n;
@@ -58,6 +58,7 @@ vector<int> solution(int m, int n, vector<vector<int>> picture) {
     answer[1] = max_size_of_one_area;
     return answer;
 }
+
 int main(void) {
     solution(13, 16,
              {
