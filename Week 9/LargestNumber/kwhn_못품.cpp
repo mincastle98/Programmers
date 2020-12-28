@@ -7,7 +7,7 @@ using namespace std;
 string solution(vector<int> numbers) {
 	string answer = "";
 	string tempo = "";
-	int size = numbers.size(); //∫§≈Õ ªÁ¿Ã¡Ó ∞™
+	int size = numbers.size(); //Î≤°ÌÑ∞ ÏÇ¨Ïù¥Ï¶à Í∞í
 	vector<string> result;
 	vector<int> por;
 	vector<int> sta;
@@ -16,10 +16,10 @@ string solution(vector<int> numbers) {
 
 	for (int i = 0; i < size; i++)
 		tempo += to_string(numbers[i]);
-	int container = tempo.size(); //«¸º∫µ» πÆ¿⁄ø≠ ±Ê¿Ã∏¶ ¿˙¿Â
+	int container = tempo.size(); //ÌòïÏÑ±Îêú Î¨∏ÏûêÏó¥ Í∏∏Ïù¥Î•º Ï†ÄÏû•
 	
 	for (int k = 0; k < container; k++)
-		result.push_back(to_string(numbers[k])); //πÆ¿⁄ø≠ ∫§≈Õø° ¥ŸΩ√±› ¿˙¿Â
+		result.push_back(to_string(numbers[k])); //Î¨∏ÏûêÏó¥ Î≤°ÌÑ∞Ïóê Îã§ÏãúÍ∏à Ï†ÄÏû•
 
 	for (int j = 0; j < container; j++)
 		sta.push_back(stoi(result[j].substr(0, 1)));
