@@ -4,11 +4,10 @@
 #include <algorithm>
 using namespace std;
 
-vector<vector<bool>> book;
-queue <int> q;
+vector<vector<bool>> book(100,vector<bool>(100,false));
 int cnt;
 
-int coloring(int m, int n, int i, int j, int color, vector<vector<int>> picture) {
+int coloring(int m, int n, int i, int j, int color, vector<vector<int>> picture,queue<int> q) {
 
 	book[i][j] = true;
 
@@ -29,7 +28,7 @@ int coloring(int m, int n, int i, int j, int color, vector<vector<int>> picture)
 		int x = q.front(); q.pop();
 		int y = q.front(); q.pop();
 	
-		coloring(m, n, x, y, color, picture);
+		coloring(m, n, x, y, color, picture,q);
 	}
 	return cnt;
 }
@@ -37,20 +36,15 @@ int coloring(int m, int n, int i, int j, int color, vector<vector<int>> picture)
 vector<int> solution(int m, int n, vector<vector<int>> picture) {
 	int number_of_area = 0;
 	
-	book = vector<vector<bool>>();
-	q = queue<int>();
+	queue <int> q;
 	cnt = 0;
-	
-	vector <bool> book_;
 	vector <int> count;
 	int size;
 
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
-			book_.push_back(false);
+			book[i][j] = false;
 		}
-		book.push_back(book_);
-		book_.clear();
 	}
 
 	for (int i = 0; i < m; i++) {
@@ -60,7 +54,7 @@ vector<int> solution(int m, int n, vector<vector<int>> picture) {
 			if (picture[i][j] == 0)
 				continue;
 			cnt = 1;
-			size=coloring(m,n,i, j, picture[i][j],picture);
+			size=coloring(m,n,i, j, picture[i][j],picture,q);
 			count.push_back(size);
 			number_of_area++;
 		}
@@ -71,6 +65,8 @@ vector<int> solution(int m, int n, vector<vector<int>> picture) {
 	answer[0] = number_of_area;
 	answer[1] = count[0];
 
+	cout << answer[0] << endl;
+	cout<<answer[1]<<endl;
 	return answer;
 }
 
