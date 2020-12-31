@@ -25,7 +25,6 @@ bool compare(vector<int> a, vector<int> b) {
                     continue;
                 else return false;
             } else continue;
-
         }
     }
 }
