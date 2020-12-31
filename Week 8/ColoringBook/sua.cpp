@@ -7,36 +7,28 @@ using namespace std;
 vector<vector<bool>> book(100,vector<bool>(100,false));
 int cnt;
 
-int coloring(int m, int n, int i, int j, int color, vector<vector<int>> picture,queue<int> q) {
+int coloring(int m, int n, int i, int j, int color, vector<vector<int>> picture) {
 
 	book[i][j] = true;
 
 	if (j + 1 < n && book[i][j+1]==false && color == picture[i][j + 1]) {
-		q.push(i); q.push(j + 1); book[i][j + 1] =true;	cnt++;
+		 book[i][j + 1] =true; cnt++; coloring(m, n, i, j+1, color, picture);
 	}
 	if (i + 1 < m && book[i+1][j] == false && color == picture[i+1][j]) {
-		q.push(i + 1); q.push(j); book[i + 1][j] =true;	cnt++;
+		 book[i + 1][j] =true; cnt++; coloring(m, n, i+1, j, color, picture);
 	}
-	if (j - 1 > 0 && book[i][j-1] == false && color == picture[i][j - 1]) {
-		q.push(i); q.push(j - 1); book[i][j - 1] =true;	cnt++;
+	if (j > 0 && book[i][j-1] == false && color == picture[i][j - 1]) {
+		 book[i][j - 1] =true; cnt++; coloring(m, n, i, j-1, color, picture);
 	}
-	if (i - 1 > 0 && book[i-1][j] == false && color == picture[i-1][j]) {
-		q.push(i - 1); q.push(j); book[i - 1][j] =true;	cnt++;
+	if (i  > 0 && book[i-1][j] == false && color == picture[i-1][j]) {
+		 book[i - 1][j] =true; cnt++; coloring(m, n, i-1, j, color, picture);
 	}
 
-	while (!q.empty()) {
-		int x = q.front(); q.pop();
-		int y = q.front(); q.pop();
-	
-		coloring(m, n, x, y, color, picture,q);
-	}
 	return cnt;
 }
 
 vector<int> solution(int m, int n, vector<vector<int>> picture) {
 	int number_of_area = 0;
-	
-	queue <int> q;
 	cnt = 0;
 	vector <int> count;
 	int size;
@@ -54,7 +46,7 @@ vector<int> solution(int m, int n, vector<vector<int>> picture) {
 			if (picture[i][j] == 0)
 				continue;
 			cnt = 1;
-			size=coloring(m,n,i, j, picture[i][j],picture,q);
+			size=coloring(m,n,i, j, picture[i][j],picture);
 			count.push_back(size);
 			number_of_area++;
 		}
@@ -65,8 +57,6 @@ vector<int> solution(int m, int n, vector<vector<int>> picture) {
 	answer[0] = number_of_area;
 	answer[1] = count[0];
 
-	cout << answer[0] << endl;
-	cout<<answer[1]<<endl;
 	return answer;
 }
 
