@@ -1,18 +1,13 @@
 from itertools import combinations
+import math
 
 
 def isPrime(num):
-    flag = 1
-
-    for i in range(2, num):
+    for i in range(2, (int)(math.sqrt(num)) + 1):
         if (num % i == 0):
-            flag = 0
-            break
+            return False
 
-    if (flag == 1):
-        return True
-    else:
-        return False
+    return True
 
 
 def solution(nums):
@@ -25,7 +20,7 @@ def solution(nums):
     return answer
 
 
-# 5C3 -> 5*4*3/3*2*1 * 1/2
+# 5C3 -> 5*4*3*2*1/3*2*1 * 1/2
 
 
 print(solution([1, 2, 7, 6, 4]))
