@@ -27,18 +27,21 @@ int solution(vector<int> citations) {
             size.push_back(h);
     }
 
+    if (size.size() == 0) return 0;
+
     int max = size[0];
     for (int i = 0; i < size.size(); i++) {
         if (size[i] >= max)
             max = size[i];
     }
+
     answer = max;
 
     return answer;
 }
 
 int main() {
-    vector<int>citations = { 4, 0, 6, 1, 5 };
+    vector<int>citations = { 0,0,0 };
     sort(citations.begin(), citations.end());
     cout << solution(citations) << endl;
     
