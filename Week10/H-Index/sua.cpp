@@ -1,22 +1,25 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int solution(vector<int> citations) {
-	int answer = 0;
-	
-	int mid= citations.size() / 2-1;
 
-	for (int i = 0; i < citations.size(); i++) {
-		if (citations[i] >= mid)
-			answer++;
+	int idx = 0;
+
+	sort(citations.begin(), citations.end(),greater<int>());
+
+	while (idx <= citations.size()) {
+		if ( idx >= citations[idx] )
+			break;
+		idx++;
 	}
 
-	return answer;
+	return idx;
 }
 
 int main() {
-	vector<int> citations = { 3, 0, 6, 1, 5 };
+	vector<int> citations = { 0,0,0,0,0,0,2,2 };
 	cout << solution(citations) << endl;
 }
