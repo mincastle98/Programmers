@@ -7,10 +7,10 @@ using namespace std;
 
 int solution(vector<int> citations) {
 	int answer = 0;
+	int cnt = 1;
 	sort(citations.begin(), citations.end());
 
 	for (int i = 0; i < citations.size(); i++) {
-		int cnt = citations[i];
 		int bigger = 0;
 		for (int j = 0; j < citations.size(); j++) {
 			if (citations[j] >= cnt)
@@ -21,10 +21,11 @@ int solution(vector<int> citations) {
 			if (answer < cnt)
 				answer = cnt;
 		}
+		cnt++;
 	}
 	return answer;
 }
 
 int main() {
-	cout<< solution({ 3,0,6,1,5 });
+	cout<< solution({ 0,1,4,5,6 });
 }
