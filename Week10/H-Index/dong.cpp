@@ -16,7 +16,7 @@ int solution(vector<int> citations) {
             if (citations[i] >= h_index)
                 count++;
         }
-        if (h_index == count) {
+        if (count>=h_index) {
             answer = h_index;
         }
     }
