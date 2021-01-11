@@ -12,24 +12,18 @@ bool comp(const string& s1, const string& s2) {
     return s1.size() < s2.size(); 
 }
 
-
 bool solution(vector<string> phone_book) {
     bool answer = true;
 
     sort(phone_book.begin(), phone_book.end(), comp);
 
-    string check = phone_book[0];
-    int len = check.length();
-
     for (int i = 0; i < phone_book.size(); i++) {
-        phone_book[i].substr(0, len);
-    }
-    for (int i = 0; i < phone_book.size(); i++) {
-        if (check==phone_book[i]) {
-            answer = false;
-            break;
+        for (int j = i+1; j < phone_book.size(); j++) {
+            string check = phone_book[j].substr(0, phone_book[i].size());
+            if (phone_book[i] == check) {
+                return false;
+            }
         }
-        else continue;
     }
     return answer;
 }
